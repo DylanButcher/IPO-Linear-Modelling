@@ -1,0 +1,6 @@
+library(readxl)
+december <- readxl::read_excel("IPOSHEET.xlsx",sheet="Dec2020PC")
+lmDecember = lm(december$EOD27~december$`Median/Offer Price`)
+summary(lmDecember)
+abline(lmDecember)
+plot(december$EOD27~december$`Median/Offer Price`, pch = 19)
